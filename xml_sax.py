@@ -93,7 +93,7 @@ parser.StartElementHandler = handler.start_element
 parser.EndElementHandler = handler.end_element
 parser.CharacterDataHandler = handler.char_data
 parser.Parse(xml_weather)
-print db
+print db[0]
 #Parsedb(db)
 
 #if __name__=='__main__':

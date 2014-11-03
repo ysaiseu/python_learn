@@ -1,0 +1,117 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUFSIZ	chatroom_client.py	/^BUFSIZ = 1024$/;"	v
+BUFSIZ	chatroom_server.py	/^BUFSIZ = 4096$/;"	v
+ChatClient	chatroom_client.py	/^class ChatClient(object):$/;"	c
+ChatServer	chatroom_server.py	/^class ChatServer(object):$/;"	c
+DefaultSaxHandler	xml_sax.py	/^class DefaultSaxHandler(object):$/;"	c
+Fib	Fib.py	/^class Fib(object):$/;"	c
+L	map.py	/^L = []$/;"	v
+MyHTMLParser	html_parser.py	/^class MyHTMLParser(HTMLParser):$/;"	c
+Parsedb	xml_sax.py	/^def Parsedb(db):$/;"	f
+QueueManager	taskmanager.py	/^class QueueManager(BaseManager):$/;"	c
+QueueManager	taskworker.py	/^class QueueManager(BaseManager):$/;"	c
+_ConnectionCtx	db.py	/^class _ConnectionCtx(object):$/;"	c
+_DbCtx	db.py	/^class _DbCtx(threading.local):$/;"	c
+_Engine	db.py	/^class _Engine(object):$/;"	c
+_LasyConnection	db.py	/^class _LasyConnection(object):$/;"	c
+__enter__	db.py	/^	def __enter__(self):$/;"	m	class:_ConnectionCtx	file:
+__exit__	db.py	/^	def __exit__(self, exctype, excvalue, traceback):$/;"	m	class:_ConnectionCtx	file:
+__getitem__	Fib.py	/^    def __getitem__(self,n):$/;"	m	class:Fib	file:
+__init__	Fib.py	/^    def __init__(self):$/;"	m	class:Fib
+__init__	chatroom_client.py	/^    def __init__(self, name, host='127.0.0.1', port=3490):$/;"	m	class:ChatClient
+__init__	chatroom_server.py	/^    def __init__(self, port=3490, backlog=5):$/;"	m	class:ChatServer
+__init__	db.py	/^	def __init__(self):$/;"	m	class:_DbCtx
+__init__	db.py	/^	def __init__(self,connect):$/;"	m	class:_Engine
+__init__	db.py	/^    def __init__(self):$/;"	m	class:_LasyConnection
+__iter__	Fib.py	/^    def __iter__(self):$/;"	m	class:Fib	file:
+_db_ctx	db.py	/^_db_ctx = _DbCtx()$/;"	v
+_wrapper	db.py	/^    def _wrapper(*args, **kw):$/;"	f	function:with_connection
+calc_md5	md5.py	/^def calc_md5(password):$/;"	f
+char_data	xml_sax.py	/^	def char_data(self, text):$/;"	m	class:DefaultSaxHandler
+cleanup	db.py	/^	def cleanup(self):$/;"	m	class:_DbCtx
+cleanup	db.py	/^    def cleanup(self):$/;"	m	class:_LasyConnection
+client	chatroom_client.py	/^    client = ChatClient(sys.argv[1],sys.argv[2], int(sys.argv[3]))$/;"	v	class:ChatClient
+cmdloop	chatroom_client.py	/^    def cmdloop(self):$/;"	m	class:ChatClient
+connect	db.py	/^	def connect(self):$/;"	m	class:_Engine
+connection	db.py	/^def connection():$/;"	f
+cursor	db.py	/^	def cursor(self):$/;"	m	class:_DbCtx
+cursor	db.py	/^    def cursor(self):$/;"	m	class:_LasyConnection
+db	md5.py	/^db = {$/;"	v
+db	xml_sax.py	/^db = []$/;"	v
+dpath	db.py	/^    dpath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'doc_test.sqlite3.db')$/;"	v
+end_element	xml_sax.py	/^	def end_element(self, text):$/;"	m	class:DefaultSaxHandler
+engine	db.py	/^engine = None$/;"	v
+f	Fib.py	/^f = Fib()$/;"	v
+f	map.py	/^def f(x):$/;"	f
+from_addr	smtp_email.py	/^from_addr = raw_input('From:')$/;"	v
+getname	chatroom_server.py	/^    def getname(self, client):$/;"	m	class:ChatServer
+handle_charref	html_parser.py	/^    def handle_charref(self, name):$/;"	m	class:MyHTMLParser
+handle_comment	html_parser.py	/^    def handle_comment(self, data):$/;"	m	class:MyHTMLParser
+handle_data	html_parser.py	/^    def handle_data(self, data):$/;"	m	class:MyHTMLParser
+handle_endtag	html_parser.py	/^    def handle_endtag(self, tag):$/;"	m	class:MyHTMLParser
+handle_entityref	html_parser.py	/^    def handle_entityref(self, name):$/;"	m	class:MyHTMLParser
+handle_startendtag	html_parser.py	/^    def handle_startendtag(self, tag, attrs):$/;"	m	class:MyHTMLParser
+handle_starttag	html_parser.py	/^    def handle_starttag(self, tag, attrs):$/;"	m	class:MyHTMLParser
+handler	xml_sax.py	/^handler = DefaultSaxHandler()$/;"	v
+init	db.py	/^	def init(self):$/;"	m	class:_DbCtx
+init	db.py	/^def init(db_type, db_schema, db_host, db_port=0, db_user=None, db_password=None, db_driver=None, **db_args):$/;"	f
+is_init	db.py	/^	def is_init(self):$/;"	m	class:_DbCtx
+local_school	ThreadLocal.py	/^local_school = threading.local()$/;"	v
+login	md5.py	/^def login(user, password):$/;"	f
+long_time_task	pool.py	/^def long_time_task(name):$/;"	f
+loop	thread.py	/^def loop():$/;"	f
+m	taskworker.py	/^m=QueueManager(address=(server_addr,5000), authkey='abc')$/;"	v
+manager	taskmanager.py	/^manager = QueueManager(address=('',5000), authkey='abc')$/;"	v
+marshall	chatroom_communication.py	/^marshall = cPickle.dumps$/;"	v
+msg	smtp_email.py	/^msg = MIMEText('hello, send by Python..', 'plain', 'utf-8')$/;"	v
+n	taskmanager.py	/^	n = random.randint(0,10000)$/;"	v	class:QueueManager
+n	taskworker.py	/^		n = task.get(timeout=1)$/;"	v	class:QueueManager
+next	Fib.py	/^    def next(self):$/;"	m	class:Fib
+p	pool.py	/^	p = Pool()$/;"	v
+parser	html_parser.py	/^parser = MyHTMLParser()$/;"	v
+parser	xml_sax.py	/^parser = ParserCreate()$/;"	v
+password	md5.py	/^	password = raw_input('Please input your password: ')$/;"	v
+password	smtp_email.py	/^password = raw_input('Password:')$/;"	v
+pid	os.py	/^pid = os.fork()$/;"	v
+pr	queue.py	/^	pr = Process(target=read, args=(q,))$/;"	v
+process_student	ThreadLocal.py	/^def process_student():$/;"	f
+process_thread	ThreadLocal.py	/^def process_thread(name):$/;"	f
+pw	queue.py	/^	pw = Process(target=write, args=(q,))$/;"	v
+q	queue.py	/^	q = Queue()$/;"	v
+r	taskmanager.py	/^	r = result.get(timeout=10)$/;"	v
+read	queue.py	/^def read(q):$/;"	f
+receive	chatroom_communication.py	/^def receive(channel):$/;"	f
+result	taskmanager.py	/^result = manager.get_result_queue()$/;"	v
+result	taskworker.py	/^result = m.get_result_queue()$/;"	v
+result_queue	taskmanager.py	/^result_queue = Queue.Queue()$/;"	v
+run_proc	process.py	/^def run_proc(name):$/;"	f
+s	tcp_client.py	/^s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)$/;"	v
+s	tcp_server.py	/^s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)$/;"	v
+select	db.py	/^def select(sql, *args):$/;"	f
+send	chatroom_communication.py	/^def send(channel, *args):$/;"	f
+serve	chatroom_server.py	/^    def serve(self):$/;"	m	class:ChatServer
+server	smtp_email.py	/^server = smtplib.SMTP(smtp_server, 25)$/;"	v
+server_addr	taskworker.py	/^server_addr = '127.0.0.1'$/;"	v
+sighandler	chatroom_server.py	/^    def sighandler(self, signum, frame):$/;"	m	class:ChatServer
+smtp_server	smtp_email.py	/^smtp_server = raw_input('SMTP server:')$/;"	v
+start_element	xml_sax.py	/^	def start_element(self, name, attrs):$/;"	m	class:DefaultSaxHandler
+t	tcp_server.py	/^	t = threading.Thread(target=tcplink, args=(sock,addr))$/;"	v
+t	thread.py	/^t = threading.Thread(target=loop, name='LoopThread')$/;"	v
+t1	ThreadLocal.py	/^t1 = threading.Thread(target= process_thread, args=('Alice',), name='Threa-A')$/;"	v
+t1	thread.py	/^t1 = threading.Thread(target=loop, name='LoopThread2')$/;"	v
+t2	ThreadLocal.py	/^t2 = threading.Thread(target= process_thread, args=('Bob',), name='Threa-B')$/;"	v
+task	taskmanager.py	/^task = manager.get_task_queue()$/;"	v
+task	taskworker.py	/^task = m.get_task_queue()$/;"	v
+task_queue	taskmanager.py	/^task_queue = Queue.Queue()$/;"	v
+tcplink	tcp_server.py	/^def tcplink(sock,addr):$/;"	f
+to_addr	smtp_email.py	/^to_addr = raw_input('To: ')$/;"	v
+unmarshall	chatroom_communication.py	/^unmarshall = cPickle.loads$/;"	v
+update	db.py	/^def update(sql, *args):$/;"	f
+username	md5.py	/^	username = raw_input('Please input your username: ')$/;"	v
+with_connection	db.py	/^def with_connection(func):$/;"	f
+write	queue.py	/^def write(q):$/;"	f
