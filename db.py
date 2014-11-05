@@ -1,13 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-class _Engine(object):
-	def __init__(self,connect):
-		self._connect = connect
-	def connect(self):
-		return self._connect()
+__author__ = 'Sai Yang'
+#learn from Michael Line
 
-engine = None
+import  os, re, sys, uuid, socket, datetime, functools, threading, logging
+
+def _log(s):
+    logging.debug(s)
+
+def _dummy_connect():
+    raise DBError('Database is not initialized. call init(dbn, ...) first.')
+
+_db_connect = _dummy_connect
+_db_convert = '?'
 
 class _LasyConnection(object):
     def __init__(self):
@@ -18,6 +24,9 @@ class _LasyConnection(object):
             _log('Open connection...')
             self.connection = _db_connect()
         return self.connection.cursor()
+    
+    def commit(self):
+        self.connection.commit()
     
     def cleanup(self):
         if self.connection:
@@ -71,13 +80,51 @@ def with_connection(func):
             return func(*args, **kw)
     return _wrapper
 
-@with_connection
-def select(sql, *args):
-        pass
+def _select(sql, first, *args):
+    global _db_ctx, _db_convert
+    cursor = None
+    if _db_convert != '?':
+        sql = sql.replace('?', _db_convert)
+    try:
+        cursor = _db_ctx.connection.cursor()
+        cursor.execute(sql, args)
+        if cursor.description:
+            names = [x[0] for x in cursor.description]
+        if first:
+            values = cursor.fetchone()
+            if not values:
+                return None
+            return values
+        return [x for x in cursor.fetchall()]
+    finally:
+        if cursor:
+            cursor.close()
 
 @with_connection
+def _update(sql, args, post_fn=None):
+    global _db_ctx, _db_convert
+    cursor = None
+    if _db_convert != '?':
+        sql = sql.replace('?', _db_convert)
+   # _log('SQL: %s, ARGS: %s' %s (sql, args))
+    try:
+        cursor = _db_ctx.connection.cursor()
+        cursor.execute(sql, args)
+        r = cursor.rowcount
+        if _db_ctx.transactions==0:
+            _db_ctx.connection.commit()
+            post_fn and post_fn()
+        return r
+    finally:
+        if cursor:
+            cursor.close()
+
+@with_connection
+def select(sql, *args):
+    return _select(sql, False, *args)
+
 def update(sql, *args):
-        pass
+    return _update(sql, args)
 
 def init(db_type, db_schema, db_host, db_port=0, db_user=None, db_password=None, db_driver=None, **db_args):
 
@@ -100,8 +147,9 @@ def init(db_type, db_schema, db_host, db_port=0, db_user=None, db_password=None,
 
 if __name__=='__main__':
     sys.path.append('.')
-    dpath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'doc_test.sqlite3.db')
+    dbpath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'doc_test.sqlite3.db')
     print(dbpath)
     if os.path.isfile(dbpath):
         os.remove(dbpath)
     init('sqlite3', dbpath, '')
+    update('create table user (id int primary key, name text, email text, passwd text, last_modified real)')
