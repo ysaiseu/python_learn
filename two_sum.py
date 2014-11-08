@@ -37,6 +37,17 @@ class Solution:
             elif numtosort[i] + numtosort[j] > target:
                 j = j - 1 
         return (index[0]+1,index[1]+1)
+    
+    def twoSum4(self, num, target):
+        i = 0
+        j = len(num)-1
+        while i<j:
+            if num[i]+num[j] == target:
+                return i,j
+            elif num[i]+num[j] < target:
+                i = i + 1
+            else:
+                j = j - 1
 
     def twoSum2(self, num, target):
         index1 = 0
@@ -72,8 +83,8 @@ class Solution:
         return index1 + 1, index2 + 1
 
 bar = Solution()
-number = [2,7,11,15]
-target = 9
+number = [2,7,11,15,26,39,48,58,69]
+target = 17
 begin = datetime.datetime.now().microsecond
 print(bar.twoSum(number, target))
 end = datetime.datetime.now().microsecond
@@ -84,6 +95,10 @@ end = datetime.datetime.now().microsecond
 print('run time2 = %d' %(end-begin))
 begin = datetime.datetime.now().microsecond
 print(bar.twoSum3(number, target))
+end = datetime.datetime.now().microsecond
+print('run time2 = %d' %(end-begin))
+begin = datetime.datetime.now().microsecond
+print(bar.twoSum4(number, target))
 end = datetime.datetime.now().microsecond
 print('run time2 = %d' %(end-begin))
 
